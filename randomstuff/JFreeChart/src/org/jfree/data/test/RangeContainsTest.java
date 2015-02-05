@@ -5,7 +5,7 @@ import org.junit.*;
 import org.jfree.data.Range;
 import junit.framework.TestCase;
 
-public class RangeCombineTest extends TestCase {
+public class RangeContainsTest extends TestCase {
 
 	private Range range1;
 	private Range range2 ;
@@ -15,7 +15,7 @@ public class RangeCombineTest extends TestCase {
 	private Range NullRange2;
 	private Range expect;
 	
-	public RangeCombineTest(String name) {
+	public RangeContainsTest(String name) {
 		super(name);
 	} 	
 	
