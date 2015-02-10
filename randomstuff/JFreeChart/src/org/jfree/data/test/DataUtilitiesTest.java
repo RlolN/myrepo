@@ -43,7 +43,7 @@ public class DataUtilitiesTest extends TestCase {
 			will(returnValue(2));
 			one(values).getValue(0,0);
 			will(returnValue(7.5));
-			one(values).getValue(1,0);
+			one(values).getValue(1,0);	
 			will(returnValue(2.5));	
 			}
 		});
