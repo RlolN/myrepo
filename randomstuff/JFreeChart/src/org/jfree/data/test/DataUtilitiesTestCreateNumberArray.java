@@ -1,54 +1,44 @@
 package org.jfree.data.test;
 
+import org.junit.*;
 import org.jfree.data.DataUtilities;
-import org.jmock.Mockery;
 
 import junit.framework.TestCase;
 
 public class DataUtilitiesTestCreateNumberArray extends TestCase {
-
-	private Mockery mockery;
 	
 	public DataUtilitiesTestCreateNumberArray(String name) {
 		super(name);
 	}
 
+	@Before
 	protected void setUp() throws Exception {
 		super.setUp();
 	}
 
+	@After
 	protected void tearDown() throws Exception {
 		super.tearDown();
 	}
 	
 	
+	@Test
 	public void testValidInitializedInput(){
-//		mockery = new Mockery();
-		double [] input = {9.3,0.4};
+		double [] input = {9.3,0.4,1,4,5.5};
 		Number [] expected = {9.3,0.4,1,4,5.5};
 		Number [] output = DataUtilities.createNumberArray(input);
 		
-		Boolean result = false;		
-		for(int i = 0; (i < output.length) && !result; i++){
+		Boolean result = true;		
+		for(int i = 0; (i < output.length) && result; i++){
 					
-//			if(output[i].doubleValue() != expected[i].doubleValue()){
-//				result = false;
-//			}
-			System.out.println(output[i]);
+			if(output[i].doubleValue() != expected[i].doubleValue()){
+				result = false;
+			}
+			// uncomment the below line to see what elements 
+			// in the result of the createNumberArray method
+//			System.out.println(output[i]);
 		}
 		
 		assertTrue("Test valid input", result);	
-	}
-	
-	public void testInvalidInput(){
-		int [] input = {3,2,4,1};
-		Number [] expected = {3.2};
-		Number [] output = DataUtilities.createNumberArray(input);
-	}
-	
-	public void testNullInput(){
-		double [] input ;
-			Number [] output = DataUtilities.createNumberArray(input);
-		
 	}
 }
