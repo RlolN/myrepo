@@ -20,5 +20,6 @@
 	<classpathentry kind="lib" path="C:/Users/ron/OneDrive/a437/Project/JFreeChart/lib/jMock/jmock-legacy-2.5.1.jar"/>
 	<classpathentry kind="lib" path="C:/Users/ron/OneDrive/a437/Project/JFreeChart/lib/jMock/jmock-script-2.5.1.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+=======
 	<classpathentry kind="output" path="bin"/>
 </classpath>
