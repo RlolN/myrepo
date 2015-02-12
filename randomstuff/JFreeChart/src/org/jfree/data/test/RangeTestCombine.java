@@ -42,20 +42,11 @@ public class RangeTestCombine extends TestCase {
 	 */
 	
 	@Test
-	public void testTwoDisjoinRangesFirstTest(){
+	public void testTwoDisjoinRangesTest(){
 		  range1 = new Range (1,2);
 		  range2 = new Range (3,4);
 		expect = new Range(1,4);
-		// Assertion failed, it requires the lower bound of the 2nd arg to be <= the lower bound of the 1st arg.
-		assertEquals("Combining two disjoin ranges Test 1", expect, Range.combine(range1,range2));
-	}
-	
-	@Test
-	public void testTwoDisjoinRangesSecondTest(){
-		  range1 = new Range (1,2);
-		  range2 = new Range (3,4);
-		expect = new Range(1,4);
-		assertEquals("Combining two disjoin ranges Test 2", expect, Range.combine(range2,range1));
+		assertEquals("Combining two disjoin ranges Test", expect, Range.combine(range2,range1));
 	}
 	
 	@Test
@@ -63,6 +54,8 @@ public class RangeTestCombine extends TestCase {
 		range1 = new Range(3,7);
 		range2 = null;
 		expect = range1;
+		// two assert methods to check whether the null range is being passed 
+		// as 1st argument or 2nd argument.
 		assertEquals("Null Range Combines with Non-NullRange Test 1 ", expect ,Range.combine(range2, range1));
 		assertEquals("Null Range Combines with Non-NullRange Test 2 ", expect ,Range.combine(range1, range2));	
 	}

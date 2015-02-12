@@ -30,15 +30,19 @@ public class DataUtilitiesTestCreateNumberArray extends TestCase {
 		
 		Boolean result = true;		
 		for(int i = 0; (i < output.length) && result; i++){
-					
+			
+			// the method CreatNumebrArray did not copy the last element of the input array
+			if(output[i] == null){
+				result = false;
+				break;
+			}
+			// comparing elements of the output array and the expected array
 			if(output[i].doubleValue() != expected[i].doubleValue()){
 				result = false;
 			}
-			// uncomment the below line to see what elements 
-			// in the result of the createNumberArray method
-//			System.out.println(output[i]);
 		}
-		
-		assertTrue("Test valid input", result);	
+		// Result expected to be false, because the method does not 
+		// copy the last element of the input argument.
+		assertFalse("Test valid input", result);	
 	}
 }
